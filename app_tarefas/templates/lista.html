@@ -8,7 +8,14 @@
     <h1>Minhas Tarefas</h1>
     <ul>
         {% for tarefa in tarefas %}
-            <li>{{ tarefa.titulo }} - {% if tarefa.concluida %}Concluída{% else %}Pendente{% endif %}</li>
+            <li>
+                <strong>{{ tarefa.titulo }}</strong> - 
+                {% if tarefa.concluida %}
+                    <span style="color: green;">Concluída</span>
+                {% else %}
+                    <span style="color: red;">Pendente</span>
+                {% endif %}
+            </li>
         {% empty %}
             <li>Nenhuma tarefa cadastrada.</li>
         {% endfor %}
